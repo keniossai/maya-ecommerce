@@ -8,6 +8,8 @@
 # testing
 /coverage
 
+/maya-store
+
 # next.js
 /.next/
 /out/
