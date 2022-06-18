@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
-import { BsFillCaretDownFill, BsTablet, BsSuitHeart, BsPerson } from 'react-icons/bs'
 
 const TopNav = () => {
     const [isShown, setIsShown] = useState(false);
@@ -42,38 +41,7 @@ const TopNav = () => {
                             <a href=''> App</a>
                     </MobileApp>
                 </NavItemWrap>
-                <PersonalInfo>
-                    <WishList>
-                        <a href="">
-                        <i className="heart"></i>
-                            <span className='text'>Whish List</span>
-                        </a>
-                    </WishList>
-                    <UserAccount>
-                        <UserAccountPort onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)}>
-                            <a> <i className="ng-person"></i> 
-                                <span className='text'>Account</span>
-                            </a>
-                        </UserAccountPort>
-                        {isShown && (<UserAccountMain>
-                            <UserSignIn>
-                                <p className='welcomeWrap'>Welcome to Maya!</p>
-                                <JoinButton>
-                                    <a href="" className='joinButton'>Join</a>
-                                    <a href="" className='signInButton'>Sign in</a>
-                                </JoinButton>
-                                <i className="Line"></i>
-                                <QuickEntry>
-                                    <li><a href="">My Order</a></li>
-                                    <li><a href="">Message Center</a></li>
-                                    <li><a href="">Wish List</a></li>
-                                    <li><a href="">My Favorite Store</a></li>
-                                    <li><a href="">My Coupon</a></li>
-                                </QuickEntry>
-                            </UserSignIn>
-                        </UserAccountMain>)}
-                    </UserAccount>
-                </PersonalInfo>
+                
             </NavGlobal>
         </LightHouseWrap>
     </LightHouse>

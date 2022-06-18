@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
 import logo from '../../public/maya.png'
+import {AiOutlineHeart} from 'react-icons/ai'
+import {MdTrackChanges} from 'react-icons/md'
 
 
 const Header = () => {
@@ -18,8 +20,9 @@ const Header = () => {
                         <SearchbarWrapper>
                             <SearchbarBody>
                                 <form action="">
+                                    <SearchIcon></SearchIcon>
                                     <UiSearch>
-                                        <input className='key-word' type="text" />
+                                        <input className='key-word' placeholder='What are you loooking for...' type="text" />
                                     </UiSearch>
                                     <input className='searchBar-Submit' type="submit" value="Search" />
                                 </form>
@@ -36,6 +39,31 @@ const Header = () => {
                                 </AccountTitle>
                             </UserSign>
                         </UserAccount>
+                        <WishListContainer>
+                            <WishList>
+                                <WishIcon></WishIcon>
+                                <WishTitle>
+                                    <LoginLabel><a href="">Wish List</a></LoginLabel>
+                                </WishTitle>
+                            </WishList>
+                        </WishListContainer>
+                        <WishListContainer>
+                            <WishList>
+                                <OrderIcon></OrderIcon>
+                                <WishTitle>
+                                    <LoginLabel><a href="">Track Order</a></LoginLabel>
+                                </WishTitle>
+                            </WishList>
+                        </WishListContainer>
+                        
+                        <CartContainer>
+                            <CartList>
+                                <CartIcon></CartIcon>
+                                <CartTitle>
+                                    <LoginLabel><a href="">Cart</a></LoginLabel>
+                                </CartTitle>
+                            </CartList>
+                        </CartContainer>
                     </Notification>
                 </HeaderMain>
             </PreHeader>
@@ -49,7 +77,7 @@ const PreLoginContainer = styled.div`
     box-shadow: 2px 2px 3px rgba(0,0,0,.1);
     background-color: #fff;
     position: relative;
-    z-index: 100;
+    z-index: -1;
     text-align: left;
     display: block;
     width: 100%;
@@ -107,6 +135,19 @@ const SearchWrap = styled.div`
 `
 const SearchbarWrapper = styled.div``
 
+const SearchIcon = styled.i`
+    position: absolute;
+    z-index: 3;
+    background-image: url("https://s.alicdn.com/@img/tfs/TB1mHDTXMaH3KVjSZFpXXbhKpXa-600-400.png?webp=close");
+    left: auto;
+    top: 10px;
+    right: -48px;
+    width: 16px;
+    height: 16px;
+    background-position: -388px -193px;
+    cursor: pointer;
+`
+
 const SearchbarBody = styled.div`
     height: 40px;
     border: 2px solid;
@@ -118,7 +159,6 @@ const SearchbarBody = styled.div`
 
     input{
         top: -2px;
-        color: #fff;
     }
 
     .searchBar-Submit{
@@ -135,10 +175,12 @@ const SearchbarBody = styled.div`
         width: 140px;
         right: -139px;
         background-color: #DD242B;
+        cursor: pointer;
+        color: #fff;
     }
 `
 const UiSearch = styled.div`
-    margin-left: 102px;
+    margin-left: 3px;
     padding-top: 1px;
     padding-bottom: 1px;
     padding-left: 10px;
@@ -171,10 +213,6 @@ const Notification = styled.div`
     width: 320px;
     position: absolute;
     right: 20px;
-    /* text-align: right;
-    position: absolute;
-    right: 20px;
-    top: 8px; */
 
 `
 
@@ -232,3 +270,70 @@ const LoginLabel = styled.div`
         color: #DD242B;
     }
 `
+
+const WishListContainer = styled.div`
+    padding: 12px 0;
+    display: inline-block;
+    position: relative;
+    text-align: left;
+`
+
+const WishList = styled.div`
+    max-width: 110px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+`
+
+const WishIcon = styled(AiOutlineHeart)`
+    width: 20px;
+`
+
+const WishTitle = styled.div``
+
+
+
+const CartContainer = styled.div`
+    padding: 12px 0;
+    display: inline-block;
+    position: relative;
+`
+
+const CartIcon = styled.div`
+    background-image: url("https://s.alicdn.com/@img/tfs/TB1mHDTXMaH3KVjSZFpXXbhKpXa-600-400.png?webp=close");
+    background-position: -242px -191px;
+    width: 23px;
+    height: 20px;
+    background-repeat: no-repeat;
+    position: static;
+`
+
+const CartList = styled.div`
+    max-width: 110px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+`
+const CartTitle = styled.div``
+
+const OrderContainer = styled.div`
+    padding: 12px 0;
+    display: inline-block;
+    position: relative;
+`
+
+const OrderList = styled.div`
+    max-width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+`
+
+const OrderIcon = styled(MdTrackChanges)`
+
+`
+
+const OrderTitle = styled.div``
