@@ -4,10 +4,12 @@ import Image from 'next/image'
 import logo from '../../public/maya.png'
 import {AiOutlineHeart} from 'react-icons/ai'
 import {MdTrackChanges} from 'react-icons/md'
+import {VscMenu} from 'react-icons/vsc'
 
 
 const Header = () => {
     return(
+        <>
         <PreLoginContainer>
             <PreHeader className='container'>
                 <HeaderMain>
@@ -41,7 +43,7 @@ const Header = () => {
                         </UserAccount>
                         <WishListContainer>
                             <WishList>
-                                <WishIcon></WishIcon>
+                                <WishIcon><AiOutlineHeart className='wishIcon' /></WishIcon>
                                 <WishTitle>
                                     <LoginLabel><a href="">Wish List</a></LoginLabel>
                                 </WishTitle>
@@ -49,7 +51,7 @@ const Header = () => {
                         </WishListContainer>
                         <WishListContainer>
                             <WishList>
-                                <OrderIcon></OrderIcon>
+                                <OrderIcon><MdTrackChanges className='OrderIcon' /></OrderIcon>
                                 <WishTitle>
                                     <LoginLabel><a href="">Track Order</a></LoginLabel>
                                 </WishTitle>
@@ -58,7 +60,8 @@ const Header = () => {
                         
                         <CartContainer>
                             <CartList>
-                                <CartIcon></CartIcon>
+                                    
+                                <CartIcon><span className="cart-number">0</span></CartIcon>
                                 <CartTitle>
                                     <LoginLabel><a href="">Cart</a></LoginLabel>
                                 </CartTitle>
@@ -68,8 +71,137 @@ const Header = () => {
                 </HeaderMain>
             </PreHeader>
         </PreLoginContainer>
+        <CategoriesContainer>
+            <CategoryWrapper>
+                <CategoryTitle>
+                    Quick Selection
+                </CategoryTitle>
+                <CategoryTitle>
+                    Fashion
+                </CategoryTitle>
+                <CategoryTitle>
+                    Children wears
+                </CategoryTitle>
+                <CategoryTitle>
+                    Phone & Accessories
+                </CategoryTitle>
+                <CategoryTitle>
+                    Homes & Kitchen
+                </CategoryTitle>
+            </CategoryWrapper>
+        </CategoriesContainer> 
+        </>
     )
 }
+
+const CategoriesContainer = styled.div`
+    padding: 0;
+    background-color: #DD242B;
+    box-shadow: 0 .25rem .5rem 0 rgba(0,0,0,.12),0 .125rem .25rem 0 rgba(0,0,0,.08);
+    
+    @media screen and (max-width: 768px){
+        display: none;
+    }
+`
+const CategoryWrapper = styled.div`
+    display: flex;
+    margin: 0 auto;
+    max-width: 1300px;
+    position: relative;
+
+    
+`
+const CategoryTitle = styled.a`
+    padding-right: 1.875rem;
+    color: #fff;
+    cursor: pointer;
+    font-size: .8225rem;
+    transition-duration: .3s;
+    transition-property: color,background-color;
+    transition-timing-function: ease-in-out;
+    white-space: nowrap;
+
+    &:hover{
+        background-color: #fff;
+        color: #000;
+    }
+
+    .icon{
+        margin: -.0625rem 0 0 .3125rem;
+        vertical-align: middle;
+        color: white;
+        font-size: 20px;
+    }
+
+    @media (min-width: 1200px){
+        padding: .75rem 1.875rem;
+    }
+  
+    &:first-child{
+        font-weight: 700;
+        padding-left: 1.5rem;
+    }
+`
+
+// const CategoriesContainer = styled.div`
+//     padding-left: 0;
+//     padding-right: 12px;
+//     max-width: 1300px;
+//     margin: 0 auto;
+//     height: 40px;
+//     line-height: inherit;
+//     padding-top: 2px;
+//     padding-bottom: 2px;
+//     box-sizing: content-box;
+//     display: block;
+//     clear: both;
+//     position: relative;
+// `
+// const HdCategory = styled.div`
+//     display: inline-block;
+// `
+// const CategoryUnit = styled.div`
+//     position: relative;
+//     z-index: 6;
+// `
+// const HeaderCatWrapper = styled.div`
+//     position: relative;
+//     display: inline-block;
+// `
+// const Cathead = styled.h1`
+//     padding-left: 16px;
+//     padding-right: 10px;
+//     width: 100%;
+//     box-sizing: border-box;
+//     line-height: 37px;
+//     border: 1px solid transparent;
+//     height: 40px;
+//     color: #333;
+//     background: #fff;
+//     font-size: 14px;
+//     text-align: center;
+
+//     margin-top: 0;
+//     font-weight: 400;
+
+//     .icon{
+//         color: #333;
+//         padding: 0 2px;
+//         vertical-align: middle;
+//         font-size: 25px;
+//         display: inline-block;
+//         width: 23px;
+//         margin-right: 9px;
+//         line-height: 24px;
+//         -webkit-text-stroke-width: .1px;
+//         -moz-osx-font-smoothing: grayscale;
+//         font-style: normal;
+//         font-variant: normal;
+//         text-transform: none;
+//     }
+// `
+
+
 
 export default Header
 
@@ -77,11 +209,15 @@ const PreLoginContainer = styled.div`
     box-shadow: 2px 2px 3px rgba(0,0,0,.1);
     background-color: #fff;
     position: relative;
-    z-index: -1;
+    z-index: 100;
     text-align: left;
     display: block;
     width: 100%;
     min-width: 720px;
+
+    @media screen and (max-width: 768px){
+        display: none;
+    }
 `
 
 const PreHeader = styled.div`
@@ -286,11 +422,20 @@ const WishList = styled.div`
     text-align: center;
 `
 
-const WishIcon = styled(AiOutlineHeart)`
+const WishIcon = styled.div`
+    position: relative;
+    height: 25px;
     width: 20px;
+    align-items: center;
+    .wishIcon{
+        font-size: 30px;
+        position: absolute;
+    }
 `
 
-const WishTitle = styled.div``
+const WishTitle = styled.div`
+    text-align: center;
+`
 
 
 
@@ -307,6 +452,22 @@ const CartIcon = styled.div`
     height: 20px;
     background-repeat: no-repeat;
     position: static;
+
+    .cart-number{
+        background: #DD242B;
+        max-width: 25px;
+        min-width: 20px;
+        height: 20px;
+        color: #fff;
+        border-radius: 10px;
+        position: absolute;
+        top: -1px;
+        left: 22px;
+        font-size: 12px;
+        line-height: 20px;
+        text-align: center;
+        padding: 0 2px;
+    }
 `
 
 const CartList = styled.div`
@@ -318,22 +479,16 @@ const CartList = styled.div`
 `
 const CartTitle = styled.div``
 
-const OrderContainer = styled.div`
-    padding: 12px 0;
-    display: inline-block;
+
+
+const OrderIcon = styled.div`
     position: relative;
+    height: 25px;
+    width: 35px;
+    align-items: center;
+    .OrderIcon{
+        font-size: 28px;
+        position: absolute;
+    }
 `
 
-const OrderList = styled.div`
-    max-width: 120px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: center;
-`
-
-const OrderIcon = styled(MdTrackChanges)`
-
-`
-
-const OrderTitle = styled.div``

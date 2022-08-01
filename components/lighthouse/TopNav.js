@@ -59,6 +59,10 @@ const LightHouse = styled.div`
     z-index: 22;
     font-size: 12px;
 
+    @media screen and (max-width: 768px){
+        display: none;
+    }
+
 `
 
 const LightHouseWrap = styled.div`
