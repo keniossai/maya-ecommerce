@@ -69,7 +69,7 @@ const FreeDelivery = styled.span`
     border-radius: .3125rem;
     box-shadow: 0 0 .5rem rgba(0,0,0,.05);
     height: 3.5rem;
-    margin-right: .9375rem;
+    margin-right: .2175rem;
     padding: .8125rem 1.5625rem;
     width: calc(30.66667% - .9375rem);
 
@@ -92,7 +92,7 @@ const DealAds = styled.div`
     box-shadow: 0 0 .3125rem rgba(0,0,0,.05);
     min-height: 6.25rem;
     padding: .625rem;
-    margin: 10px 16px 16px auto;
+    margin-top: 10px;
 
     @media screen and (max-width: 768px){
         display: none;

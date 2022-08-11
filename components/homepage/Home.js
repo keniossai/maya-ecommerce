@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Banner from '../homepage/Banner'
 import Category from '../homepage/Category'
+import AboutUs from './AboutUs'
 import Topdeals from './Topdeals'
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
 					<Banner />
 				</HomeScreenMain>
 					<Topdeals />
+					<AboutUs />
 			</Container>
 		</HomeFirstScreen>
 	)

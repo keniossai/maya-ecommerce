@@ -32,7 +32,7 @@ class Banner extends Component {
                     <img src="https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/v1657190811/contentservice/GOL-KONGA-BANNERS-1253-x-500.jpg_BymiF4Vo5.jpg" alt="" />
                     </a>
                     <a href="">
-                    <img src="https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/v1658581171/contentservice/phones.jpg_rkq2g_F29.jpg" alt="" />
+                    <img src="https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/v1658588435/contentservice/Asset%201.jpg_H15zpKth5.jpg" alt="" />
                     </a>
                     <a href="">
                     <img src="https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/v1658913780/contentservice/intelpc-1.jpg_By2g4tRh9.jpg" alt="" />

@@ -4,6 +4,7 @@ import TopNav from '../components/lighthouse/TopNav'
 import Header from '../components/header/Header'
 import HomePage from '../components/homepage/Home'
 import MobileNav from '../components/mobile-menu/MobileNav'
+import Footer from '../components/footer/Footer'
 
 
 const Home = () => {
@@ -19,6 +20,7 @@ const Home = () => {
       <Header />
       <div id="root">
         <HomePage />
+        <Footer />
       </div>
     </div>
   )

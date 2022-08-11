@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import BestSelling from './BestSelling'
 
 
 function PopularCategory (){
@@ -432,6 +433,7 @@ function PopularCategory (){
                     </DiscountAds>
                 </DiscountWrapper>
             </section>
+            <BestSelling />
         </PopularCat>
     )
 }
@@ -443,8 +445,12 @@ const DiscountWrapper = styled.section`
     border-radius: .3125rem;
     padding: .625rem;
     display: flex;
-    margin: 0 1.25rem 0 0;
+    /* margin: 0 1.25rem 0 0; */
     margin-top: .9375rem;
+
+    @media screen and (max-width: 576px){
+        display: block;
+    }
 `
 const DiscountAds = styled.div`
 
@@ -454,6 +460,11 @@ const DiscountAds = styled.div`
         :first-of-type{
             margin-right: .625rem;
         }
+    }
+    @media screen and (max-width: 576px){
+        :last-of-type {
+            margin-top: .625rem;
+        }    
     }
 
     a{
@@ -468,7 +479,7 @@ const DiscountAds = styled.div`
 
 // Mobile category
 const MobileCategory = styled.section`
-    margin: 0 1.25rem 0 0;
+    /* margin: 0 1.25rem 0 0; */
     
     @media screen and (max-width: 576px){
         margin: -.6125rem auto 0;
@@ -599,7 +610,7 @@ const Head = styled.h2`
 const CategoryWrapper = styled.section`
     background-color: #fff;
     border-radius: 0 0 .3125rem .3125rem;
-    margin: 0 1.25rem 0 0;
+    /* margin: 0 1.25rem 0 0; */
 
     @media screen and (max-width: 576px){
         margin: -.3125rem auto 0;
